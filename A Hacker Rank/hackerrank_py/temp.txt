@@ -1,0 +1,11 @@
+n,m=map(int,input().split())
+myList=[]
+for i in range(n+m):
+    element=input()
+    myList=myList+[element]
+
+print("  hf")
+
+for i in range(m):
+    for j in range(n):
+        print(myList[n+i],myList[j])
