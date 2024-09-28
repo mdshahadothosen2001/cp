@@ -1,16 +1,27 @@
-from typing import List
+# O(nm) complexity
+# here n is length of lowest word
+# here m is length of words
+from typing import List 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         if not strs:
             return ""
-        shortest = min(strs, key=len)
+        
+        lowest_word = min(strs, key=len)
         prefix = ""
-        for i, char in enumerate(shortest):
-            for word in strs:
-                if word[i] != char:
+        for index, char in enumerate(lowest_word):
+            for each_word in strs:
+                if char != each_word[index]:
                     return prefix
             prefix += char
+        
         return prefix
+      
+obj = Solution()
+strs = ["flower","flow","flight"]
+longest = obj.longestCommonPrefix(strs)
+print(longest)
+
 
 """
 Example 1:
